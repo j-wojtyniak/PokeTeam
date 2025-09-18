@@ -4,6 +4,32 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PokeTeam</title>
-    <script src="test.js" defer></script>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="src/controller/app.controler.js"></script>
   </head>
-  
+  <body>
+    <div class="app">
+      <!-- Search -->
+      <input id="search-input" type="text" placeholder="Search for a Pokemon..." class="search" />
+
+      <!-- Left: Pokemon data -->
+      <div class="pokemon-data">
+        <p>Pokemon data</p>
+        <div class="buttons">
+          <button class="btn">Add Pokemon</button>
+          <button class="btn">Close</button>
+        </div>
+      </div>
+
+      <!-- Right: Team slots -->
+      <div class="team">
+        <div class="slot">Pokemon</div>
+        <div class="slot">Pokemon</div>
+        <div class="slot">Pokemon</div>
+        <div class="slot">Pokemon</div>
+        <div class="slot">Pokemon</div>
+        <div class="slot">Pokemon</div>
+      </div>
+    </div>
+  </body>
+</html>

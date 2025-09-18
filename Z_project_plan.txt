@@ -1,0 +1,13 @@
+✔️ MVP (Minimum Viable Product)
+
+User can: 
+- search for a Pokemon using its name or id
+- add the Pokemon to the team (max 6)
+- remove a Pokemon from the team
+
+✔️ User Stories
+- As a trainer I want to search for a Pokemon and read its type, stats
+- As a trainer I want to add a Pokemon to my team
+- As a trainer I want to remove a Pokemon from my team
+- As a trainer I want to check my Pokemons' stats
+
