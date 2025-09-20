@@ -27,3 +27,5 @@ export function addPokemonToTeam() {
 
   state.team.push(structuredClone(state.pokemon));
 }
+
+export function removePokemonFromTeam() {}
