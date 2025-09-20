@@ -62,3 +62,283 @@ body {
     text-align: center;
     font-weight: bold;
 }
+
+/* ===== Pokemon info card ===== */
+.pokemon-info {
+    padding: 0;
+    background: transparent;
+}
+
+/* KARTA */
+.poke-card {
+    --radius: 14px;
+    --shadow: 0 8px 24px rgba(0, 0, 0, .08);
+    background: #fff;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1rem 1rem 1.25rem;
+    display: grid;
+    gap: 1rem;
+}
+
+/* NAGŁÓWEK */
+.poke-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+}
+
+.poke-name {
+    font-size: 1.25rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+.poke-id {
+    font-weight: 600;
+    font-size: .9rem;
+    color: #888;
+    margin-left: .4rem;
+}
+
+/* TYPY */
+.poke-types {
+    display: flex;
+    gap: .5rem;
+    flex-wrap: wrap;
+}
+
+.type-badge {
+    display: inline-block;
+    padding: .35rem .6rem;
+    border-radius: 999px;
+    font-size: .8rem;
+    font-weight: 600;
+    background: #eee;
+}
+
+.type-electric {
+    background: #fde68a;
+    color: #7a5d00;
+}
+
+.type-water {
+    background: #bfdbfe;
+    color: #0b3b8c;
+}
+
+.type-fire {
+    background: #fecaca;
+    color: #8a1d1d;
+}
+
+.type-grass {
+    background: #bbf7d0;
+    color: #065f46;
+}
+
+.type-ice {
+    background: #dbeafe;
+    color: #0c4a6e;
+}
+
+.type-fighting {
+    background: #fca5a5;
+    color: #7f1d1d;
+}
+
+.type-poison {
+    background: #e9d5ff;
+    color: #6b21a8;
+}
+
+.type-ground {
+    background: #fcd34d;
+    color: #7c2d12;
+}
+
+.type-flying {
+    background: #ddd6fe;
+    color: #5b21b6;
+}
+
+.type-psychic {
+    background: #fbcfe8;
+    color: #9d174d;
+}
+
+.type-bug {
+    background: #d9f99d;
+    color: #3f6212;
+}
+
+.type-rock {
+    background: #e5e7eb;
+    color: #374151;
+}
+
+.type-ghost {
+    background: #c4b5fd;
+    color: #4c1d95;
+}
+
+.type-dragon {
+    background: #a5b4fc;
+    color: #1e3a8a;
+}
+
+.type-dark {
+    background: #cbd5e1;
+    color: #111827;
+}
+
+.type-steel {
+    background: #e5e7eb;
+    color: #111827;
+}
+
+.type-fairy {
+    background: #fce7f3;
+    color: #9d174d;
+}
+
+.type-electric,
+.type-water,
+.type-fire,
+.type-grass {
+    box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .08);
+}
+
+/* GŁÓWNA SEKCJA */
+.poke-main {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+
+.poke-art {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    background: linear-gradient(180deg, #f7f7f7, #efefef);
+    border-radius: var(--radius);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .6);
+}
+
+/* STATY */
+.poke-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .65rem .9rem;
+    margin: 0;
+}
+
+.poke-stats>div {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: .5rem;
+    padding: .35rem .5rem;
+    border-radius: 8px;
+    background: #f6f7f9;
+}
+
+.poke-stats dt {
+    font-size: .8rem;
+    color: #6b7280;
+}
+
+.poke-stats dd {
+    margin: 0;
+    font-weight: 700;
+    text-align: right;
+}
+
+/* responsywnosc dla węższych paneli */
+@media (max-width: 900px) {
+    .poke-main {
+        grid-template-columns: 1fr;
+    }
+
+    .poke-art {
+        max-width: 320px;
+        justify-self: center;
+    }
+}
+
+/* ===== Team slots ===== */
+.team {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+/* bazowy slot */
+.team-slot {
+    background: #fff;
+    border-radius: 12px;
+    min-height: 150px;
+    padding: 1rem;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    transition: transform .12s ease, box-shadow .12s ease, border-color .12s ease;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+}
+
+.team-slot:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, .08);
+}
+
+/* pusty slot */
+.team-slot--empty {
+    background: #f1f3f5;
+    border: 2px dashed #d1d5db;
+    box-shadow: none;
+}
+
+.team-slot--empty .placeholder {
+    color: #374151;
+    font-weight: 700;
+    opacity: .7;
+}
+
+/* sprite + nazwa */
+.poke-sprite {
+    width: 72px;
+    height: 72px;
+    object-fit: contain;
+    image-rendering: -webkit-optimize-contrast;
+    /* ładniejszy sprite */
+}
+
+.slot-name {
+    margin: 0;
+    font-weight: 700;
+    font-size: .95rem;
+    color: #111827;
+    letter-spacing: .2px;
+}
+
+/* responsywność przy węższym panelu */
+@media (max-width: 900px) {
+    .team {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .team-slot {
+        min-height: 130px;
+    }
+
+    .poke-sprite {
+        width: 64px;
+        height: 64px;
+    }
+}

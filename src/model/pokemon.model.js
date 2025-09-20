@@ -1,6 +1,6 @@
 import { state } from "./state.js";
 
-export async function mapApiToPokemon(data) {
+export function mapApiToPokemon(data) {
   state.pokemon.id = data.id;
   state.pokemon.name = data.name;
   state.pokemon.type = data.types.map((type) => {
@@ -12,3 +12,20 @@ export async function mapApiToPokemon(data) {
     state.pokemon.stats[statistics.stat.name] = statistics.base_stat;
   });
 }
+
+export function addPokemonToTeam() {
+  // TODO: Create functions to display alerts of having a full team or the pokemon already being in the team
+  if (state.team.length > 5) {
+    console.log("Maximum team is 6!");
+    return;
+  }
+  if (state.team.some((member) => member.id === state.pokemon.id)) {
+    console.log(`${state.pokemon.name} is already in your team!`);
+    return;
+  }
+
+  state.team.push({
+    id: state.pokemon.id,
+    name: state.pokemon.name,
+    sprite: state.pokemon.sprite,
+    type: s

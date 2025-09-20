@@ -11,3 +11,4 @@ User can:
 - As a trainer I want to remove a Pokemon from my team
 - As a trainer I want to check my Pokemons' stats
 
+npx http-server -p 5173 -c-1
