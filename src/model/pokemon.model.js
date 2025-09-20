@@ -15,7 +15,7 @@ export function mapApiToPokemon(data) {
 
 export function addPokemonToTeam() {
   // TODO: Create functions to display alerts of having a full team or the pokemon already being in the team
-  if (state.team.length > 5) {
+  if (state.team.length == 6) {
     console.log("Maximum team is 6!");
     return;
   }
@@ -28,4 +28,6 @@ export function addPokemonToTeam() {
     id: state.pokemon.id,
     name: state.pokemon.name,
     sprite: state.pokemon.sprite,
-    type: s
+    type: state.pokemon.type,
+  });
+}

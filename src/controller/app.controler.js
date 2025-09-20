@@ -1,5 +1,5 @@
 import SearchView from "../view/search.view.js";
-import PokemonView from "../view/pokemon.view.js";
+import PokemonView from "../view/dataPokemon.view.js";
 import TeamView from "../view/team.view.js";
 import { getPokemon } from "../services/pokeapi.service.js";
 import { mapApiToPokemon, addPokemonToTeam } from "../model/pokemon.model.js";
@@ -21,13 +21,10 @@ const handleTeam = function () {
   addPokemonToTeam();
 
   // Display the team
-  TeamView.displayTeam(state.team);
+  TeamView.displayTeam(state);
 };
 
 // Initialise the app
 const init = function () {
   SearchView.onSearch(handleSearch);
-  TeamView.addToTeam(handleTeam);
-};
-
-init();
+  TeamView
