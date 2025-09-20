@@ -342,3 +342,47 @@ body {
         height: 64px;
     }
 }
+
+/* ===== Cry button ===== */
+.poke-cry {
+    margin-top: .8rem;
+    text-align: center;
+}
+
+.btn-cry {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #facc15;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.btn-cry:hover {
+    background: #eab308;
+}
+
+/* ===== Action buttons ===== */
+.poke-actions {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: .6rem;
+    justify-content: center;
+}
+
+.btn-action {
+    padding: .45rem .9rem;
+    border: none;
+    border-radius: 8px;
+    background: #e5e7eb;
+    font-weight: 600;
+    font-size: .9rem;
+    cursor: pointer;
+    transition: background .2s ease;
+}
+
+.btn-action:hover {
+    background: #d1d5db;
+}

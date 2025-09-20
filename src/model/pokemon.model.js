@@ -8,6 +8,7 @@ export function mapApiToPokemon(data) {
   });
   state.pokemon.sprite = data.sprites.front_default;
   state.pokemon.img = data.sprites.other["official-artwork"].front_default;
+  state.pokemon.cry = data.cries.latest;
   data.stats.forEach((statistics) => {
     state.pokemon.stats[statistics.stat.name] = statistics.base_stat;
   });
@@ -24,10 +25,5 @@ export function addPokemonToTeam() {
     return;
   }
 
-  state.team.push({
-    id: state.pokemon.id,
-    name: state.pokemon.name,
-    sprite: state.pokemon.sprite,
-    type: state.pokemon.type,
-  });
+  state.team.push(structuredClone(state.pokemon));
 }

@@ -13,7 +13,7 @@ const handleSearch = async function (query) {
   mapApiToPokemon(pokemon);
 
   // Display searched Pokemon info
-  PokemonView.displayInfo(state);
+  PokemonView.displayInfo(state.pokemon);
 };
 
 // Handles adding to the team
@@ -27,4 +27,8 @@ const handleTeam = function () {
 // Initialise the app
 const init = function () {
   SearchView.onSearch(handleSearch);
-  TeamView
+  TeamView.addToTeam(handleTeam);
+  TeamView.handleDisplayMember(state);
+};
+
+init();
