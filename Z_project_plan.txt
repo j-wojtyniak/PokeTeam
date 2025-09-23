@@ -12,18 +12,3 @@ User can:
 - As a trainer I want to check my Pokemons' stats
 
 npx http-server -p 5173 -c-1
-
-
-✔️ Project story
-DONE 1. FUNCTIONALITY: Searching for Pokemon and fetching the data
-    DONE a. Displaying the fetched Pokemon
-    b. NEW: Playing the cry
-    c. NEW: Displaying the evolution line
-        c.a. NEW: Displaying the data after clicking on one of the evolutions
-            c.a.a. Back button
-    d. NEW: Displaying the moves
-    e. NEW: Displaying the location encounters
-DONE 2. FUNCTIONALITY: Adding the Pokemon to the team
-    DONE a. Displaying the info after clicking on the Pokemon from the team
-    b. FUNCTIONALITY: Deleting the Pokemon
-    

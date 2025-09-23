@@ -3,7 +3,7 @@ import PokemonView from "./pokemonView.js";
 class ResultView extends PokemonView {
   _parentEl = document.querySelector(".pokemon-info");
 
-  handleAddBtn(handler) {
+  onAdd(handler) {
     this._parentEl.addEventListener("click", (e) => {
       const addBtn = e.target.closest(".btn--add");
       if (!addBtn) return;
@@ -11,11 +11,13 @@ class ResultView extends PokemonView {
     });
   }
 
-  handleDeleteBtn(handler) {
+  onDelete(handler) {
     this._parentEl.addEventListener("click", (e) => {
-      const deleteBtn = e.target.closest("btn--delete");
+      const deleteBtn = e.target.closest(".btn--delete");
       if (!deleteBtn) return;
+
       handler();
+      this._parentEl.innerHTML = "";
     });
   }
 }

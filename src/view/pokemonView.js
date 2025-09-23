@@ -13,7 +13,16 @@ export default class PokemonView {
     return typesMarkup.join("");
   }
 
+  getTargetIndex(e) {
+    const target = e.target.closest(".team-slot");
+    if (!target) return;
+
+    const i = Number(target.dataset.slot) - 1;
+    return i;
+  }
+
   displayInfo(pokemon, preview = false) {
+    if (!pokemon) return;
     preview ? (this._parentEl = document.querySelector(".pokemon-info")) : this._parentEl;
     const markup = this.createInfoMarkup(pokemon, preview);
     this._parentEl.innerHTML = "";

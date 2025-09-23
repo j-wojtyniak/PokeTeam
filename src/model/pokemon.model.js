@@ -28,6 +28,14 @@ export function addPokemonToTeam() {
   state.team.push(structuredClone(state.pokemon));
 }
 
+export function deletePokemon() {
+  const indexToDelete = state.team.findIndex((pok) => pok.id === state.pokemon.id);
+  state.team.splice(indexToDelete, 1);
+  return indexToDelete;
+}
+
 export function setCurrentPokemon(i) {
+  console.log("current pokemon set to:");
   state.pokemon = structuredClone(state.team[i]);
+  console.log(state.pokemon);
 }
