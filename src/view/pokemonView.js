@@ -1,4 +1,4 @@
-export default class Pokemon {
+export default class PokemonView {
   _parentEl;
   capitalize(str) {
     if (!str) return "";
@@ -15,13 +15,12 @@ export default class Pokemon {
 
   displayInfo(pokemon, preview = false) {
     preview ? (this._parentEl = document.querySelector(".pokemon-info")) : this._parentEl;
-    const markup = this.createInfoMarkup(pokemon);
+    const markup = this.createInfoMarkup(pokemon, preview);
     this._parentEl.innerHTML = "";
     this._parentEl.insertAdjacentHTML("afterbegin", markup);
   }
 
-  createInfoMarkup(data) {
-    console.log(data);
+  createInfoMarkup(data, preview) {
     // TODO: remove .pokemon (state.pokemon in controller)
     return `
         <article class="poke-card">
@@ -77,6 +76,12 @@ export default class Pokemon {
               <button class="btn-action btn-moves">Show moves</button>
               <button class="btn-action btn-encounters">Show location encounters</button>
             </footer>
-          </article>`;
+          </article>
+                  <div class="buttons">
+          
+          ${preview ? '<button class="btn btn--delete">Delete Pokemon</button>' : '<button class="btn btn--add">Add Pokemon</button>'}
+          
+        </div>
+          `;
   }
 }

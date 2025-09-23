@@ -1,29 +1,25 @@
-import Pokemon from "./pokemon.view.js";
+import PokemonView from "./pokemonView.js";
 
-class TeamView extends Pokemon {
+class TeamView extends PokemonView {
   _addBtn = document.querySelector(".btn--add");
   _parentEl = document.querySelector(".team");
 
-  addToTeam(handler) {
-    this._addBtn.addEventListener("click", function (e) {
-      e.preventDefault();
-      handler();
-    });
-  }
-
-  handleDisplayMember(data) {
+  handleDisplayMember(handler) {
+    // TODO: rozdzielic displayMember na model i view
     this._parentEl.addEventListener("click", (e) => {
       e.preventDefault();
+
       const target = e.target.closest(".team-slot");
       if (!target) return;
 
-      const indexToDisplay = data.team.findIndex((pok) => pok.id === Number(target.dataset.id));
+      const i = Number(target.dataset.slot) - 1;
+      handler(i);
 
-      const pokemonToDisplay = data.team.at(indexToDisplay);
-      console.log("\nPOKEMON TO DISPLAY:");
-      console.log(pokemonToDisplay);
+      // const indexToDisplay = data.team.findIndex((pok) => pok.id === Number(target.dataset.id));
 
-      this.displayInfo(pokemonToDisplay, true);
+      // const pokemonToDisplay = data.team.at(indexToDisplay);
+
+      // this.displayInfo(pokemonToDisplay, true);
     });
   }
 
@@ -51,4 +47,4 @@ class TeamView extends Pokemon {
   }
 }
 
-export default new TeamView();
+exp

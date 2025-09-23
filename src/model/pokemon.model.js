@@ -1,6 +1,6 @@
 import { state } from "./state.js";
 
-export function mapApiToPokemon(data) {
+export function displayFetchedPokemon(data) {
   state.pokemon.id = data.id;
   state.pokemon.name = data.name;
   state.pokemon.type = data.types.map((type) => {
@@ -28,4 +28,6 @@ export function addPokemonToTeam() {
   state.team.push(structuredClone(state.pokemon));
 }
 
-export function removePokemonFromTeam() {}
+export function setCurrentPokemon(i) {
+  state.pokemon = structuredClone(state.team[i]);
+}
